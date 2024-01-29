@@ -18,10 +18,11 @@
       <%}%>
 <%if(all.length>0){%>
       <div class="d-flex">
+
+        <a class="btn btn-dark m-5 px-3" href="/add">Add New Tasks</a>
 <form method="post" action="/deleteall">
         <button class="btn btn-danger m-5 px-3">Remove All Tasks</button>
       </form>
-        <a class="btn btn-dark m-5 px-3" href="/add">Add New Tasks</a>
 </div>
       <%}
        else{%>
