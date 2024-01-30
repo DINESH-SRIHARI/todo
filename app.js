@@ -61,6 +61,6 @@ app.post('/deleteall',async(req,res)=>{
     let data=await TodoModel.deleteMany({ })
     res.redirect('add')
 })
-app.listen(5000,()=>{
+app.listen(5001,()=>{
     console.log('hello')
 })
