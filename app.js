@@ -12,7 +12,7 @@ const hema=new Schema(
     {
         title:String,
         description:String,
-        duedate:Date
+        // duedate:Date
     }
 )
 const TodoModel=mongoose.model('todos',hema)
@@ -31,13 +31,13 @@ app.post('/deleteOne',async(req,res)=>{
     let data=await TodoModel.deleteOne({title:req.body.mail});
     res.redirect('/')
 })
-app.post('/addtask',(req,res)=>{
+app.post('/addtask',async(req,res)=>{
     let task=new TodoModel({
         title:req.body.title,
         description:req.body.desc,
-        duedate:req.body.type
+        // duedate:req.body.type
     })
-    task.save();
+    await task.save();
     res.redirect('/');
 })
 app.post('/e',async(req,res)=>{
@@ -51,7 +51,7 @@ app.post('/update',async(req,res)=>{
             $set:{
                 title:req.body.title,
                 description:req.body.desc,
-                duedate:req.body.type
+                // duedate:req.body.type
             }
         }
     )
